@@ -20,4 +20,24 @@ class GuestController extends Controller
 
         return view('pages.index', compact('post'));
     }
+
+    public function create() {
+
+        return view('pages.create');
+    }
+    public function store(Request $request) {
+
+        $data = $request -> validate([
+            'title' => 'required|string|max:255|unique:series,title,' . $id,
+            'author' => 'required|string|max:255',
+            'subtitle' => 'required|string|max:255|unique:series,title',
+            'description' =>'optional|string',
+            'date' => 'required|date',
+            'rating' => 'nullable|integer|min:0|max:5'
+        ]);
+
+        $post = Post::create($data);
+
+        return redirect() -> route('index', $post -> id);
+    }
 }

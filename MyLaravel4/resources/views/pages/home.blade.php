@@ -3,6 +3,10 @@
     
     <h1>Posts:</h1>
 
+    <h4>
+        <a href="{{ route('create') }}">ADD A POST</a>
+    </h4>
+
     <ul>
         @foreach ($posts as $post)
             <li>
