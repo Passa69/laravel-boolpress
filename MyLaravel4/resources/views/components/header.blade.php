@@ -1,3 +1,3 @@
 <header>
-    <h1>LOGIN/REGISTER</h1>
+    <h1>HOMEPAGE</h1>
 </header>

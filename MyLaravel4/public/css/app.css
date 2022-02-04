@@ -10968,6 +10968,10 @@ body {
   text-align: center;
 }
 
+body a {
+  color: white;
+}
+
 body hr {
   background-color: white;
 }
