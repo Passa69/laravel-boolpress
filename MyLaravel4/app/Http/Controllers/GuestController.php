@@ -40,4 +40,13 @@ class GuestController extends Controller
 
         return redirect() -> route('index', $post -> id);
     }
+
+    public function delete($id) {
+
+        $post = Post::findOrFail($id);
+
+        $post -> delete();
+
+        return redirect() -> route('home');
+    }
 }

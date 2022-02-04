@@ -16,3 +16,5 @@ Route::get('/post/index/{id}', 'GuestController@index') -> name('index');
 
 Route::get('/post/create', 'GuestController@create') -> name('create');
 Route::post('/post/store', 'GuestController@store') -> name('store');
+
+Route::get('/post/delete/{id}', 'GuestController@delete') -> name('delete');
