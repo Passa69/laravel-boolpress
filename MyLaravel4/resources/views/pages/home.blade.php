@@ -1,20 +1,23 @@
 @extends('mylayouts.main-layout')
 @section('content')
     
-    <h1>Posts:</h1>
+    @auth
 
-    <h4>
-        <a href="{{ route('create') }}">ADD A POST</a>
-    </h4>
+        <h1>Posts:</h1>
 
-    <ul>
-        @foreach ($posts as $post)
-            <li>
-                <a href="{{ route('index', $post -> id) }}">
-                    {{ $post -> title }}
-                </a>
-                - {{ $post -> date }}
-            </li>
-        @endforeach
-    </ul>
+        <h4>
+            <a class="btn btn-secondary" href="{{ route('create') }}">ADD A POST</a>
+        </h4>
+
+        <ul>
+            @foreach ($posts as $post)
+                <li>
+                    <a href="{{ route('index', $post -> id) }}">
+                        {{ $post -> title }}
+                    </a>
+                    - {{ $post -> date }}
+                </li>
+            @endforeach
+        </ul>
+    @endauth
 @endsection
