@@ -5,7 +5,7 @@
         <h1>{{ $post -> title }}</h1>
         <h4>Author: {{ $post -> author }}</h4>
         <h4>Category: {{ $post -> category -> title }}</h4>
-        <h4>Tag: {{ $tag -> tag -> name }}</h4>
+        <h4>Tag: {{ $post -> tags }}</h4>
         <span>Rating: {{ $post -> rating }}</span>
     </div>
 
