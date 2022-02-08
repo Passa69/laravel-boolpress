@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Post;
+use App\Category;
 
 class GuestController extends Controller
 {
@@ -23,20 +24,28 @@ class GuestController extends Controller
 
     public function create() {
 
-        return view('pages.create');
+        $categories = Category::all();
+
+        return view('pages.create', compact('categories'));
     }
-    public function store(Request $request, $id) {
+    public function store(Request $request) {
 
         $data = $request -> validate([
-            'title' => 'required|string|max:255|unique:series,title,' . $id,
+            'title' => 'required|string|max:255',
             'author' => 'required|string|max:255',
-            'subtitle' => 'required|string|max:255|unique:series,title,' . $id,
+            'subtitle' => 'required|string|max:255',
             'description' =>'nullable|string|max:255',
             'date' => 'required|date',
-            'rating' => 'required|integer|min:0|max:5'
+            'rating' => 'required|integer|min:0|max:5',
         ]);
 
-        $post = Post::create($data);
+        $post = Post::make($data);
+        $category = Category::findOrFail($request -> get('category'));
+
+        $post -> category() -> associate($category);
+        $post -> save();
+
+        // dd($post);
 
         return redirect() -> route('index', $post -> id);
     }

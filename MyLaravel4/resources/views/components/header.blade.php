@@ -53,5 +53,7 @@
             <input class="btn btn-secondary" type="submit" value="LOGIN">
 
         </form>
+
+        <br><hr class="bg-white"><br>
     @endauth
 </header>
