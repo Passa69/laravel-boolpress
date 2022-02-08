@@ -4,6 +4,7 @@
     <div>
         <h1>{{ $post -> title }}</h1>
         <h4>Author: {{ $post -> author }}</h4>
+        <h4>Category: {{ $post -> category -> title }}</h4>
         <span>Rating: {{ $post -> rating }}</span>
     </div>
 

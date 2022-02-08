@@ -15,6 +15,7 @@
                     <a href="{{ route('index', $post -> id) }}">
                         {{ $post -> title }}
                     </a>
+                    - {{ $post -> category -> title }}
                     - {{ $post -> date }}
                 </li>
             @endforeach
