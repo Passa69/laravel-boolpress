@@ -20,4 +20,8 @@ class Post extends Model
 
         return $this -> belongsTo(Category::class);
     }   
+
+    public function reactions() {
+        return $this -> belongToMany(Reaction::class);
+    }
 }
