@@ -25,7 +25,7 @@
         <input type="text" name="author" placeholder="author"><br>
 
         <label for="subtitle">Subtitle:</label><br>
-        <input type="text" name="title" placeholder="subtitle"><br>
+        <input type="text" name="subtitle" placeholder="subtitle"><br>
 
         <label for="description">Description:</label><br>
         <textarea type="text" cols="30" rows="10" name="description"></textarea><br>

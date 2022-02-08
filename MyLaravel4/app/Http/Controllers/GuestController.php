@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Post;
 use App\Category;
@@ -40,7 +41,6 @@ class GuestController extends Controller
             'date' => 'required|date',
             'rating' => 'required|integer|min:0|max:5',
         ]);
-        $data['author'] = Auth::user() -> name;
 
         $post = Post::make($data);
         $category = Category::findOrFail($request -> get('category'));
