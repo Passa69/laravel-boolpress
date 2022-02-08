@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Reaction::class, function (Faker $faker) {
     return [
-        'name' => $faker -> name()
+        'name' => $faker -> words(2, true)
     ];
 });
