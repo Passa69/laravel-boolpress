@@ -30,6 +30,10 @@
         <input type="date" name="date"><br>
         <label for="rating">Rating:</label><br>
         <input type="number" name="rating"><br>
+        <label for="reaction">Reactions:</label><br>
+        @foreach ($reactions as $reaction)
+            <input type="checkbox" name="reactions[]" value="{{ $reaction -> id }}"> {{ $reaction -> name }} <br>
+        @endforeach
         <label for="category">Category:</label><br>
         <select name="category">
             @foreach ($categories as $category)

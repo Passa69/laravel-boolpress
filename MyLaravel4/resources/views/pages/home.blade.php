@@ -17,7 +17,10 @@
                 <a href="{{ route('index', $post -> id) }}">
                     {{ $post -> title }}
                 </a>
-                - {{ $post -> category -> title }}
+                - {{ $post -> category -> title }} -
+                @foreach ($post -> reactions as $reaction)
+                    - {{ $reaction -> name }} -
+                @endforeach
                 - {{ $post -> date }}
             </li>
         @endforeach

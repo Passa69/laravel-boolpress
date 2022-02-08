@@ -22,6 +22,6 @@ class Post extends Model
     }   
 
     public function reactions() {
-        return $this -> belongToMany(Reaction::class);
+        return $this -> belongsToMany(Reaction::class);
     }
 }
