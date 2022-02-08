@@ -22,6 +22,8 @@ class CreatePostsTable extends Migration
             $table->text('description') -> nullable();
             $table->date('date');
             $table->tinyInteger('rating') -> unsigned();
+
+            $table -> bigInteger('category_id') -> unsigned();
             
             $table->timestamps();
         });
