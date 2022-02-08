@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Post;
 use App\Category;
-use App\Reaction;
+use App\Tag;
 
 class GuestController extends Controller
 {
@@ -26,9 +26,9 @@ class GuestController extends Controller
     public function create() {
 
         $categories = Category::all();
-        $reactions = Reaction::all();
+        $tags = Tag::all();
 
-        return view('pages.create', compact('categories', 'reactions'));
+        return view('pages.create', compact('categories', 'tags'));
     }
     public function store(Request $request) {
 
@@ -48,10 +48,10 @@ class GuestController extends Controller
         $post -> category() -> associate($category);
         $post -> save();
 
-        $reaction = Reaction::findOrFail($request -> get('reaction'));
-        $post -> reaction() -> attach($reactions);
+        $tag = Tag::findOrFail($request -> get('tag'));
+        $post -> tag() -> attach($tags);
         $post -> save();
-        
+
         // dd($post);
 
         return redirect() -> route('index', $post -> id);

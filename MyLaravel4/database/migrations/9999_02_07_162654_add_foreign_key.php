@@ -19,13 +19,13 @@ class AddForeignKey extends Migration
                     -> on('category');
         });
 
-        Schema::table('post_reaction', function (Blueprint $table) {
-            $table  -> foreign('post_id', 'post_reaction') 
+        Schema::table('post_tag', function (Blueprint $table) {
+            $table  -> foreign('post_id', 'post_tag') 
                     -> references('id') 
                     -> on('posts');
-            $table  -> foreign('reaction_id', 'reaction_post') 
+            $table  -> foreign('tag_id', 'tag_post') 
                     -> references('id') 
-                    -> on('reactions');
+                    -> on('tags');
         });
     }
 
@@ -40,9 +40,9 @@ class AddForeignKey extends Migration
             $table -> dropForeign('post_category');
         });
 
-        Schema::table('post_reaction', function (Blueprint $table) {
-            $table -> dropForeign('post_reaction');
-            $table -> dropForeign('reaction_post');
+        Schema::table('post_tag', function (Blueprint $table) {
+            $table -> dropForeign('post_tag');
+            $table -> dropForeign('tag_post');
         });
     }
 }

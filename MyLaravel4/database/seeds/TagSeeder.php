@@ -3,9 +3,9 @@
 use Illuminate\Database\Seeder;
 
 use App\Post;
-use App\Reaction;
+use App\Tag;
 
-class ReactionSeeder extends Seeder
+class TagSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,13 +14,13 @@ class ReactionSeeder extends Seeder
      */
     public function run()
     {
-        factory(Reaction::class, 20) -> create() -> each(function($reaction) {
+        factory(Tag::class, 20) -> create() -> each(function($tag) {
 
             $posts = Post::inRandomOrder() -> limit(rand(0, 5)) -> get();
 
-            $reaction -> posts() -> attach($posts);
+            $tag -> posts() -> attach($posts);
 
-            $reaction -> save();
+            $tag -> save();
         });
     }
 }

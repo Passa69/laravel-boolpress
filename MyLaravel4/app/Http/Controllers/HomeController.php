@@ -23,10 +23,6 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $data = $request -> validate([
-            
-        ])
-        
-        return view('home');
+        //    
     }
 }

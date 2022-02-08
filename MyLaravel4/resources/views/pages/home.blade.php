@@ -18,8 +18,8 @@
                     {{ $post -> title }}
                 </a>
                 - {{ $post -> category -> title }} -
-                @foreach ($post -> reactions as $reaction)
-                    - {{ $reaction -> name }} -
+                @foreach ($post -> tags as $tag)
+                    - {{ $tag -> name }} -
                 @endforeach
                 - {{ $post -> date }}
             </li>
