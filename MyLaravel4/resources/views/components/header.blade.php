@@ -25,14 +25,17 @@
             @csrf
 
             <label for="name">Name</label>
-            <input type="text" name="name" value="Tommaso"> <br>
+            <input type="text" name="name" value="Tommaso"><br>
+
             <label for="email">E-mail</label>
-            <input type="text" name="email" value="aaa@bbb.ccc"> <br>
+            <input type="text" name="email" value="aaa@bbb.ccc"><br>
+
             <label for="password">Password</label>
-            <input type="password" name="password" value="password"> <br>
+            <input type="password" name="password" value="password"><br>
+
             <label for="password_confirmation">Password confirm</label>
-            <input type="password" name="password_confirmation" value="password"> <br>
-            <br>
+            <input type="password" name="password_confirmation" value="password"><br><br>
+
             <input class="btn btn-secondary" type="submit" value="REGISTER">
 
         </form>
@@ -46,10 +49,11 @@
             @csrf
 
             <label for="email">E-mail</label>
-            <input type="text" name="email" value="aaa@bbb.ccc"> <br>
+            <input type="text" name="email" value="aaa@bbb.ccc"><br>
+
             <label for="password">Password</label>
-            <input type="password" name="password" value="password"> <br>
-            <br>
+            <input type="password" name="password" value="password"><br><br>
+            
             <input class="btn btn-secondary" type="submit" value="LOGIN">
 
         </form>
