@@ -6,7 +6,7 @@
         <h4>Author: {{ $post -> author }}</h4>
         <h4>Category: {{ $post -> category -> title }}</h4>
         @foreach ($post -> tags as $tag)
-            <h4>Tag: {{$tag -> name}}</h4>
+            <h4>Tag: {{ $tag -> name }}</h4> 
         @endforeach
         <span>Rating: {{ $post -> rating }}</span>
     </div>
