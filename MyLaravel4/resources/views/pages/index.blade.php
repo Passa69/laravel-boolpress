@@ -15,6 +15,8 @@
         <p>{{ $post -> description ?? "--no description--" }}</p>
     </div>
 
+    <a href="{{ route('edit', $post -> id) }}">EDIT</a><br><br>     
+
     <a href="{{ route('delete', $post -> id) }}">DELETE</a><br><br>
 
     <a href="{{ route('home') }}">TORNA ALLA HOME</a>

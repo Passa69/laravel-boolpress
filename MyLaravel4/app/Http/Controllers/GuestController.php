@@ -57,6 +57,17 @@ class GuestController extends Controller
         return redirect() -> route('index', $post -> id);
     }
 
+    public function edit($id) {
+
+        $categories = Category::all();
+        $tags = Tag::all();
+
+        $post = Post::findOrFail($id);
+
+        return view('pages.edit', compact('categories', 'tags', 'post'));
+    }
+
+
     public function delete($id) {
 
         $post = Post::findOrFail($id);

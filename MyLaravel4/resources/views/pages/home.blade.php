@@ -17,9 +17,9 @@
                 <a href="{{ route('index', $post -> id) }}">
                     {{ $post -> title }}
                 </a>
-                - {{ $post -> category -> title }} -
+                - CATEGORY: {{ $post -> category -> title }} -
                 @foreach ($post -> tags as $tag)
-                    - {{ $tag -> name }} -
+                    - TAG: {{ $tag -> name }} -
                 @endforeach
                 - {{ $post -> date }}
             </li>
