@@ -93,14 +93,14 @@ class GuestController extends Controller
         $tags = [];
         try {
 
-            $tag = Tag::findOrFail($request -> get('tag'));
+            $tags = Tag::findOrFail($request -> get('tag'));
         } catch (\Exception $e) {}
 
         // metodo 2
         // if ($request -> has('tags'))
         //     $tag = Tag::findOrFail($request -> get('tag'));
 
-        $post -> tag() -> sync($tags);
+        $post -> tags() -> sync($tags);
         $post -> save();
 
         return redirect() -> route('index', $post -> id);
