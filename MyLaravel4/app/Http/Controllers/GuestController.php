@@ -13,7 +13,7 @@ class GuestController extends Controller
 {
     public function home() {
 
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc') -> get();
 
         return view('pages.home', compact('posts'));
     }
@@ -93,7 +93,7 @@ class GuestController extends Controller
         $tags = [];
         try {
 
-            $tags = Tag::findOrFail($request -> get('tag'));
+            $tags = Tag::findOrFail($request -> get('tags'));
         } catch (\Exception $e) {}
 
         // metodo 2
