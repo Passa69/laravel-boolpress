@@ -55,7 +55,6 @@
                         checked
                     @endif
                 @endforeach
-            
             > {{ $tag -> name }} <br>
         @endforeach
         <br>

@@ -51,10 +51,10 @@ class GuestController extends Controller
         $tags = [];
         try {
 
-            $tag = Tag::findOrFail($request -> get('tag'));
+            $tags = Tag::findOrFail($request -> get('tags'));
         } catch (\Exception $e) {}
 
-        $post -> tag() -> attach($tags);
+        $post -> tags() -> attach($tags);
         $post -> save();
 
         // dd($post);
