@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <form action="{{ route('store') }}" method="POST">
+    <form action="{{ route('update', $post -> id) }}" method="POST">
 
         @method("POST")
         @csrf
@@ -59,7 +59,7 @@
             > {{ $tag -> name }} <br>
         @endforeach
         <br>
-        <input type="submit" value="CREATE">
+        <input type="submit" value="UPDATE">
 
     </form>
 @endsection

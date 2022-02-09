@@ -24,6 +24,7 @@ Route::middleware('auth')->group(function() {
     Route::post('/post/store', 'GuestController@store') -> name('store');
 
     Route::get('/post/edit/{id}', 'GuestController@edit') -> name('edit');
+    Route::post('/post/update/{id}', 'GuestController@update') -> name('update');
     
     Route::get('/post/delete/{id}', 'GuestController@delete') -> name('delete');
 });
